@@ -24,15 +24,6 @@ io.on('connection', (socket) => {
         console.log('we got a message from the client');
         io.emit('serverToClient', message)
     })
-
-
-    // socket.emit('countUpdated', count)
-
-    // socket.on('increment', () => {
-    //     count++
-    //     // socket.emit('countUpdated', count)
-    //     io.emit('countUpdated', count)
-    // })
 })
 
 
