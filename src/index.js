@@ -18,13 +18,12 @@ app.use(express.static(publicDirectoryPath))
 
 
 io.on('connection', (socket) => {
-
-
     console.log('New web socket connection');
 
-
-
-    socket.emit('message', 'Welcome, fella!')
+    socket.on('sendMessage', (message) => {
+        console.log('we got a message from the client');
+        io.emit('serverToClient', message)
+    })
 
 
     // socket.emit('countUpdated', count)
