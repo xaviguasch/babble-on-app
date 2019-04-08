@@ -25,15 +25,15 @@ socket.on('messageLoc', (message) => {
 $messageForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    // disable the form
     $messageFormButton.setAttribute('disabled', 'disabled')
 
     const message = e.target.elements.message.value
 
     socket.emit('sendMessage', message, (error) => {
 
-        // enable the form
         $messageFormButton.removeAttribute('disabled')
+        $messageFormInput.value = ''
+        $messageFormInput.focus()
 
 
         if (error) {
