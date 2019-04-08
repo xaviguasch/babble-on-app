@@ -29,6 +29,8 @@ document.querySelector('#send-location').addEventListener('click', () => {
         return alert('Geolocation is not supported by your browser.')
     }
 
+
+
     navigator.geolocation.getCurrentPosition((position) => {
         socket.emit('sendLocation', {
             latitude: position.coords.latitude,
