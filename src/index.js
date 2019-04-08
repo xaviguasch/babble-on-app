@@ -23,9 +23,9 @@ io.on('connection', (socket) => {
     socket.emit('message', 'Welcome, you new user!')
     socket.broadcast.emit('message', 'A new user has joined!')
 
-    socket.on('sendMessage', (message) => {
-        console.log('we got a message from the client');
+    socket.on('sendMessage', (message, callback) => {
         io.emit('serverToClient', message)
+        callback()
     })
 
     socket.on('disconnect', () => {
