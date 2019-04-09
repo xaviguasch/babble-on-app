@@ -11,7 +11,7 @@
 <body>
     <h1>Babble On Chat App</h1>
 
-
+    <div id="messages"></div>
 
     <form id="message-form">
         <input type="text" name="message" placeholder="talk to me">
@@ -19,6 +19,13 @@
     </form>
 
     <button id="send-location">Send location</button>
+
+
+    <script id="message-template" type="text/html">
+        <div>
+            <p>This is a message</p>
+        </div>
+    </script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>

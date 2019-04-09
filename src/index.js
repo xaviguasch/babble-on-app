@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
         if (filter.isProfane(message)) {
             return callback('Profanity is not allowed')
         }
-        io.emit('serverToClient', message)
+        io.emit('message', message)
         callback()
 
     })
